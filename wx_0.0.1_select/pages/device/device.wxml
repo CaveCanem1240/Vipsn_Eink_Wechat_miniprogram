@@ -1,0 +1,21 @@
+<view class="container">
+  <text style="font-size:medium;word-break:break-all">设备名称：{{name}}</text>
+  <text style="font-size:x-small;color:gray;word-break:break-all">设备ID：{{connectedDeviceId}}</text>
+  <text style="font-size:x-small;color:gray">状态：{{connected?"已连接":"已断开"}}</text>
+  <text style="font-size:medium;margin-top:10px">发送内容：</text>
+  <input class="input" value="{{inputText}}" bindinput="bindInput" maxlength="244"/>
+  <text style="font-size:medium;margin-top:10px">Device List</text> 
+  <scroll-view scroll-y style="width:690rpx;height:{{list_height}}rpx">
+    <block wx:for="{{devicesList}}" wx:key="deviceId">
+      <view class="list-item" id="{{item.deviceId}}" bindtap="Connect">
+        <view style="display:flex;flex-direction:column;width:80%">
+          <text style="font-size:medium;word-break:break-all">设备名称: {{item.name}}</text>
+          <text style="font-size:x-small;color:gray;word-break:break-all">设备ID: {{item.deviceId}}</text>
+          <text style="font-size:x-small;color:gray;word-break:break-all">信号强度RSSI: {{item.RSSI}}</text>
+        </view>
+        <image style="width:36px;height:36px" mode="aspectFit" src="/images/bluetooth.png"></image>
+      </view>
+    </block>
+  </scroll-view>
+  <button type="primary" class="button" bindtap="Scan">{{searching?"搜索中...":"搜索蓝牙设备"}}</button>
+</view>
