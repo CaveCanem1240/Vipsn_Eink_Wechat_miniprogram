@@ -1,0 +1,15 @@
+{
+  "pages": [
+    "pages/device/device",
+    "pages/search/search",
+    "pages/send/send"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f8f8f8",
+    "navigationBarTitleText": "Vipsn-Eink BLE Demo",
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#f8f8f8"
+  },
+  "sitemapLocation": "sitemap.json"
+}
